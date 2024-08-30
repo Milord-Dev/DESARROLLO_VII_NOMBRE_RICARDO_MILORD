@@ -26,4 +26,18 @@ echo $presentacion1 . "<br>";
 echo $presentacion2 . "<br>";
 echo $mensaje . "<br>";
 
+//usando echo 
+echo "Hola, Mundo! <br>";
+echo "Mi nombre es $nombre <br>";
+
+//usando print
+print "Tengo $edad años <br>";
+
+//usando printf (permite formateo)
+printf ("Me llamo %s y tengo %d años<br>", $nombre, $edad);
+
+//Usando var_dump (útil para debugging)
+var_dump($nombre);
+echo "<br>";
+
 ?>
