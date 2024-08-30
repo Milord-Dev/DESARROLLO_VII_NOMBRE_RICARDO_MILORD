@@ -9,11 +9,11 @@ echo "El nomvbre '$nombre' tiene $longitud caracteres";
 $miNombre = "Ricardo Milord"; // Reemplaza esto con tu nombre completo
 $longitudMiNombre = strlen($miNombre);
 
-echo "Mi nombre completo tiene $longitudMiNombre caracteres.";
+echo "<br> Mi nombre completo $miNombre tiene $longitudMiNombre caracteres. <br>";
 
 // Bonus: Crea una función que tome un string como parámetro y devuelva si es "corto" (menos de 5 caracteres), "medio" (entre 5 y 10 caracteres) o "largo" (más de 10 caracteres)
-function categorizarLongitud($nombre) {
-    $longitud = strlen($nombre);
+function categorizarLongitud($miNombre) {
+    $longitud = strlen($miNombre);
     if ($longitud < 5) {
         return "corto";
     } elseif ($longitud <= 10) {
