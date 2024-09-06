@@ -7,8 +7,16 @@ function contar_palabras($texto){
 
 //Funcion de contar vocales
 function contar_vocales($texto){
-    $vocales = ["a,e,i,o,u"];
-    
+        $vocales = "aeiouáéíóúüAEIOUÁÉÍÓÚÜ";
+        $contador = 0;
+        
+        for ($i = 0; $i < strlen($texto); $i++) {
+            if (strpos($vocales, $texto[$i]) !== false) {
+                $contador++;
+            }
+        }
+        
+        return $contador;
 };
 
 //Funcion de invertir palabras
