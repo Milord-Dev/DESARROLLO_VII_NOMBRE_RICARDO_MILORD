@@ -1,8 +1,9 @@
 <?php
-class libro {
+class libro implements Prestable{
     public $titulo;
     public $autor;
     public $anioPublicacion;
+    private $disponible = true;
 
     public function __construct($titulo, $autor, $anioPublicacion){
         $this -> titulo = $titulo;
@@ -37,9 +38,33 @@ class libro {
     public function obtenerInformacion(){
         return "'{$this->titulo}' por {$this->autor}, publicado en {$this->anioPublicacion}";
     }
+
+    public function presentar()
+    {
+        if($this->disponible){
+            $this->disponible = false;
+            return true;
+        }
+        return false;
+    }
+
+    public function devolver()
+    {
+        $this->disponible = true;
+    }
+
+    public function estaDisponible()
+    {
+        return $this->disponible;
+    }
 }
 //Ejemplo de uso
-$miLibro = new Libro(" El Quijote ","Miguel de Cervantes",1605);
-echo $miLibro->obtenerInformacion();
+$miLibro = new Libro("Rayuela", "Julio Cortázar", 1963);
+echo $miLibro->obtenerInformacion() . "\n";
 echo "\nTitulo: " . $miLibro->getTitulo();
+echo "Disponible: " . ($libro->estaDisponible() ? "Sí" : "No") . "\n";
+$libro->prestar();
+echo "Disponible después de prestar: " . ($libro->estaDisponible() ? "Sí" : "No") . "\n";
+$libro->devolver();
+echo "Disponible después de devolver: " . ($libro->estaDisponible() ? "Sí" : "No") . "\n";
 ?>
