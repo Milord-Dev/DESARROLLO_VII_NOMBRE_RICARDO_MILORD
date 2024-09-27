@@ -183,6 +183,7 @@ switch ($action) {
                     <th><a href="index.php?action=sort&field=anioPublicacion&direction=<?php echo $sortField == 'anioPublicacion' && $sortDirection == 'ASC' ? 'DESC' : 'ASC'; ?>&filterEstado=<?php echo $filterEstado; ?>">Año <?php echo $sortField == 'anioPublicacion' ? ($sortDirection == 'ASC' ? '▲' : '▼') : ''; ?></a></th>
                     <th><a href="index.php?action=sort&field=estado&direction=<?php echo $sortField == 'estado' && $sortDirection == 'ASC' ? 'DESC' : 'ASC'; ?>&filterEstado=<?php echo $filterEstado; ?>">Estado <?php echo $sortField == 'estado' ? ($sortDirection == 'ASC' ? '▲' : '▼') : ''; ?></a></th>
                     <th><a href="index.php?action=sort&field=fechaAdquisicion&direction=<?php echo $sortField == 'fechaAdquisicion' && $sortDirection == 'ASC' ? 'DESC' : 'ASC'; ?>&filterEstado=<?php echo $filterEstado; ?>">Fecha Adquisición <?php echo $sortField == 'fechaAdquisicion' ? ($sortDirection == 'ASC' ? '▲' : '▼') : ''; ?></a></th>
+                    <th>Detalles</th>
                     <th>Tipo</th>
                     <th>Acciones</th>
                 </tr>
@@ -197,6 +198,7 @@ switch ($action) {
                         <td><?php echo $recurso->estado; ?></td>
                         <td><?php echo $recurso->fechaAdquisicion; ?></td>
                         <td><?php echo $recurso->tipo; ?></td>
+                        <td><?php echo $recurso->obtenerDetallesPrestamo()?></td>
                         <td>
                             <a href='index.php?action=edit&id=<?php echo $recurso->id; ?>' class='btn btn-sm btn-warning'><i class='fas fa-edit'></i></a>
                             <a href='index.php?action=delete&id=<?php echo $recurso->id; ?>' class='btn btn-sm btn-danger' onclick="return confirm('¿Está seguro de que desea eliminar este recurso?');"><i class='fas fa-trash'></i></a>
