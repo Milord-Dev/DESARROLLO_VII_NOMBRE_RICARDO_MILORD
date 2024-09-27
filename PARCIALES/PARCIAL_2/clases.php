@@ -3,7 +3,7 @@ interface Prestable{
     public function obtenerDetallesPrestamo():string;
 }
 
-class RecursoBiblioteca {
+abstract class RecursoBiblioteca implements Prestable{
     public $id;
     public $titulo;
     public $autor;
@@ -11,6 +11,11 @@ class RecursoBiblioteca {
     public $estado;
     public $fechaAdquisicion;
     public $tipo;
+    public $estadosLegibles = [
+        'disponible' => 'DISPONIBLE',
+        'prestado' => 'PRESTADO',
+        'en_reparacion' => 'EN REPARACION'
+    ];
 
     public function __construct($datos) {
         foreach ($datos as $key => $value) {
@@ -22,6 +27,29 @@ class RecursoBiblioteca {
 }
 
 // Implementar las clases Libro, Revista y DVD aquí
+class libro extends RecursoBiblioteca implements Prestable{
+    public $isbn;
+    public function obtenerDetallesPrestamo(): string
+    {
+        return "Numero Isbn: ". $this->$isbn;
+    }
+};
+
+class Revista extends RecursoBiblioteca implements Prestable{
+    public $numeroEdicion;
+    public function obtenerDetallesPrestamo(): string
+    {
+        return "Numero de Edicion: ". $this->$numeroEdicion;
+    }
+};
+
+class DVD extends RecursoBiblioteca implements Prestable{
+    public $duracion;
+    public function obtenerDetallesPrestamo(): string
+    {
+        return "Duracion: ". $this->$duracion;
+    }
+};
 
 class GestorBiblioteca {
     private $recursos = [];
