@@ -1,5 +1,24 @@
 <?php
-//Lgoica
+session_start();
+$usuarios = [
+    'usuario' => '123',
+    'usuario2' => '12345'
+];
+
+// Verificar si el formulario fue enviado
+if (isset($_POST['usuario']) && isset($_POST['password'])) {
+    $usuario = $_POST['usuario'];
+    $password = $_POST['password'];
+
+    if (isset($usuarios[$usuario]) && $usuarios[$usuario] === $password) {
+        $_SESSION['usuario'] = $usuario;
+        $_SESSION['tareas'] = [];  
+        header("Location: dashboard.php");
+        exit();
+    } else {
+        $error = "Credenciales incorrectas.";
+    }
+}
 ?>
 
 <!DOCTYPE html>
