@@ -1,0 +1,833 @@
+/* ===== Estilos Generales ===== */
+body {
+  font-family: 'Anuphan', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Para hacer que el footer esté al final */
+  min-height: 100vh;
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin: 20px 0;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.container {
+  flex: 1; /* Hacer que el contenedor principal ocupe el espacio disponible */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li a {
+  font-weight: 700;
+  color: #333;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #f47c3c;
+}
+
+header .signup {
+  color: #f47c3c;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 500px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+footer h3,
+footer h4 {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+footer p {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  background: url('public/assets/images/beach.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 5rem 1rem;
+  border-radius: 10px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-content .btn {
+  background-color: #f47c3c;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero-content .btn:hover {
+  background-color: #d65f2e;
+}
+
+/* ===== Paquetes Populares ===== */
+.popular-packages {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #f9f9f9;
+  border-top: 2px solid #f47c3c;
+  border-bottom: 2px solid #f47c3c;
+  margin: 2rem 0;
+}
+
+.popular-packages h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.popular-packages p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.packages {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.package {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 18rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+}
+
+.package img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+
+.package h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 1rem 0.3rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.package p {
+  color: #777;
+  font-size: 0.9rem;
+  margin: 0 1rem 1rem;
+}
+
+.package p span {
+  margin-right: 0.3rem;
+}
+
+.view-more {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #f47c3c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.view-more:hover {
+  color: #d65f2e;
+}
+
+/* ===== Detalles del Paquete ===== */
+.package-detail {
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.package-detail img {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FF8C00;
+  margin: 20px 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #FF8C00;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #e07b00;
+}
+
+/* ===== Responsividad ===== */
+@media (max-width: 768px) {
+  .package-detail {
+    padding: 20px;
+  }
+
+  .button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+}
+
+
+
+body.fondo {
+  background-image: url("../../src/imag/fondo.jpg"); /* Ruta relativa desde el CSS al archivo de imagen */
+  background-size: cover; /* Escala la imagen para cubrir todo el fondo */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Hace que el fondo sea fijo al hacer scroll */
+  
+}
+
+
+/* ===== admin ===== */
+/* General */
+body.admin {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.line {
+  width: 80px;
+  height: 2px;
+  margin: 10px auto;
+  background-color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+/* Paquetes */
+.packages {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.package {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 200px;
+  text-align: center;
+  position: relative;
+}
+
+.package img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+
+}
+
+.package-info {
+  padding: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.actions button {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.actions .edit {
+  color: #007bff;
+}
+
+.actions .delete {
+  color: #ff4d4d;
+}
+
+.add-package {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #ddd;
+  color: #999;
+  font-size: 24px;
+  cursor: pointer;
+  height: 210px;
+}
+
+
+/* Estilo del cuadro para agregar un nuevo paquete */
+.package.add-package {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #ddd;
+  background-color: #f9f9f9;
+  width: 200px;
+  height: 210px;
+  position: relative;
+  cursor: pointer;
+}
+
+.package.add-package button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  font-size: 48px;
+  color: #999;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.package.add-package button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+/*estilos de agregar paquetes*/
+
+/* Navbar */
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.navbar nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Main content */
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.subtitle a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.line {
+  width: 100px;
+  margin: 10px auto;
+  border-bottom: 2px solid #ccc;
+}
+
+/* Formulario */
+.add-package-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.add-package-btn {
+  text-align: right;
+}
+
+.create-button {
+  background-color: #ff6f00;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.create-button:hover {
+  background-color: #e65c00;
+}
+
+
+
+/*login*/
+
+/* General styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+}
+
+/* Background */
+.background {
+  background-image: url('fondo-login.jpg'); /* Reemplaza con tu imagen */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login container */
+
+.login-container {
+  background: rgba(255, 255, 255, 0.6); /* Más transparencia */
+  padding: 30px 40px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 350px;
+  width: 100%;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra más destacada */
+  
+}
+
+.title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background-color: darkorange;
+}
+
+.forgot-password {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.forgot-password a {
+  color: orange;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 600px) {
+  .login-container {
+    padding: 20px;
+    max-width: 90%; /* Más flexible en pantallas pequeñas */
+  }
+}
+
+
+
+/* ===== Estilos del Formulario de Contacto ===== */
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centrar el texto en el formulario */
+}
+
+.contact-form h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.contact-form p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+  text-align: center; /* Centrar el texto del párrafo */
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  text-align: center; /* Centrar el texto de la etiqueta */
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 80%; /* Ajustar el ancho de los campos de entrada */
+  padding: 0.8rem;
+  margin: 0 auto 1rem auto; /* Centrarlos horizontalmente y agregar margen inferior */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  display: block; /* Asegurarse de que sean elementos de bloque */
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.contact-form .submit-btn {
+  background-color: #f47c3c;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto; /* Centrarlos horizontalmente */
+}
+
+.contact-form .submit-btn:hover {
+  background-color: #d65f2e;
+}
+
+
+
+/* ===== Estilos de la Página de Gestión de Usuarios ===== */
+
+
+/* Estilos de la tabla de usuarios */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  text-align: left;
+}
+
+table th {
+  background-color: #f47c3c;
+  color: #fff;
+}
+
+/* Estilos del formulario para eliminar */
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.form label {
+  margin-right: 1rem;
+}
+
+.form input {
+  padding: 0.5rem;
+  margin-right: 1rem;
+}
+
+.delete-btn {
+  background-color: #d9534f;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c9302c;
+}
+
+
+
+/* ===== registro ===== */
+/* Estilo general del formulario */
+form.registro {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.7); /* Más transparencia */
+  border: 1px solid #e0e0e0; /* Borde sutil */
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Título del formulario */
+form h1 {
+  font-family: 'Anuphan', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #007BFF;
+  margin-bottom: 1rem; /* Espacio debajo */
+  text-align: center; /* Alinea el texto al centro */
+}
+
+/* Estilo para etiquetas */
+form label {
+  font-family: 'Anuphan', sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #333;
+  align-self: flex-start; /* Alinea las etiquetas a la izquierda */
+}
+
+/* Campos de entrada */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  font-family: 'Anuphan', sans-serif;
+  font-size: 0.9rem;
+  color: #555;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  text-align: center; /* Centra el texto dentro del input */
+}
+
+/* Enfoque en campos */
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #007BFF; /* Color del borde en enfoque */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Resplandor */
+  outline: none;
+}
+
+/* Botón de envío */
+form button[type="submit"] {
+  background-color: #007BFF;
+  color: #fff;
+  font-family: 'Anuphan', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover y click en botón */
+form button[type="submit"]:hover {
+  background-color: #0056b3; /* Más oscuro en hover */
+}
+
+form button[type="submit"]:active {
+  transform: scale(0.98); /* Animación ligera */
+}
+
+/* Mensaje de error o validación */
+form .error-message {
+  color: #d9534f;
+  font-size: 0.8rem;
+  font-family: 'Anuphan', sans-serif;
+}
+
+/* Responsividad */
+@media (max-width: 480px) {
+  form {
+    padding: 1rem;
+  }
+
+  
+
+  form h1 {
+    font-size: 1.2rem; /* Reduce el tamaño del título en pantallas pequeñas */
+  }
+}
