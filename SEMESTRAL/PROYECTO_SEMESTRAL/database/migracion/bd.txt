@@ -1,0 +1,40 @@
+-- Crear la base de datos
+CREATE DATABASE SEMESTRAL;
+
+
+-- Usar la base de datos
+USE SEMESTRAL;
+
+
+-- Crear tabla usuarios
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    correo_electronico VARCHAR(150) NOT NULL UNIQUE,
+    contrasena VARCHAR(255) NOT NULL,
+    rol ENUM('admin', 'usuario') DEFAULT 'usuario'
+);
+
+-- Insertar el usuario administrador
+INSERT INTO usuarios (nombre, correo_electronico, contrasena, rol) 
+VALUES ('admin', 'castulocastillo28@hotmail.com', MD5('admin'), 'admin');
+
+-- Crear tabla paquetes
+CREATE TABLE paquetes (
+    idpaquete INT AUTO_INCREMENT PRIMARY KEY,
+    lugar VARCHAR(100) NOT NULL,
+    descripcion TEXT NOT NULL,
+    urlimagen VARCHAR(255) NOT NULL,
+    fecha DATE NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL
+);
+
+-- Crear tabla reservas
+CREATE TABLE reservas (
+    idreserva INT AUTO_INCREMENT PRIMARY KEY,
+    idusuario INT NOT NULL,
+    idpaquete INT NOT NULL,
+    fecha_reserva TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (idusuario) REFERENCES usuarios(id) ON DELETE CASCADE,
+    FOREIGN KEY (idpaquete) REFERENCES paquetes(idpaquete) ON DELETE CASCADE
+);
